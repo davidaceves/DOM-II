@@ -67,21 +67,21 @@ headingAnimater.addEventListener('click', (event) => {
 })
 
 
-// #4 Added zoom in feature for all images with cursor change. Double click to zoom in. 
+// #4 Added zoom in feature for all images with cursor change. Single click to zoom in and double click to zoom out. Zoom in animation does not work properly on load. 
 let photoSelect = document.querySelectorAll("img");
 
 photoSelect.forEach((element) => {
 
-    element.addEventListener('load', (event) => {
-        element.style.transitionProperty = 'width';
+    element.addEventListener('click', (event) => {
+        element.style.transition = 'width .5s ease-in';
         element.style.width = '50%';
         element.style.cursor = 'zoom-in';
     });
 
-    element.addEventListener('dblclick', (event) => {
+    element.addEventListener('dblclick', (event) => {      
+        element.style.transition = 'width .5s ease-in';
         element.style.width = '100%';
-        element.style.transitionProperty = 'width';        element.style.transition = '.5s ease-in';
-        element.style.cursor = 'pointer';
+        element.style.cursor = 'zoom-out';
     });
 });
 
@@ -108,9 +108,27 @@ introAnimater.addEventListener('wheel', (event) => {
     introAnimater.style.color = colorGen();
 })
 
-// #6
+// #6 Alerts when you have copied text from a p element
+let ptags = document.querySelectorAll("p");
 
-// #7
+ptags.forEach((element) => {
+    
+    element.addEventListener('copy', (event) => {
+        alert('You have copied text.')
+    });
+
+});
+
+// #7 Changes background color when you drag an image
+let allPhotos = document.querySelectorAll("img");
+
+allPhotos.forEach((element) => {
+
+    element.addEventListener('drag', (event) => {
+        document.querySelector('body').style.background = 'red';
+    });
+    
+})
 
 // #8
 
