@@ -32,6 +32,12 @@ anchorAnimater.forEach((element) => {
         element.style.color = 'black';
 
     });
+
+    element.addEventListener('click', (event) => {
+        event.preventDefault()
+    });
+
+
 });
 
 // #3 Adds *random* color chance to "Fun Bus" text when you click the text
@@ -67,12 +73,16 @@ let photoSelect = document.querySelectorAll("img");
 photoSelect.forEach((element) => {
 
     element.addEventListener('click', (event) => {
+        element.style.transitionProperty = 'width';
+        element.style.transition = '.5s ease-out';
         element.style.width = '50%';
         element.style.cursor = 'zoom-in';
     });
 
     element.addEventListener('dblclick', (event) => {
         element.style.width = '100%';
+        element.style.transitionProperty = 'width';
+        element.style.transition = '.5s ease-in';
         element.style.cursor = 'zoom-out';
     });
 });
