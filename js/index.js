@@ -1,6 +1,7 @@
 // David Aceves
 // Your code goes here
 
+// #1
 let photoBorder = document.querySelectorAll("img");
 
 photoBorder.forEach((key, index) => {
@@ -14,21 +15,68 @@ photoBorder.forEach((key, index) => {
     });
 });
 
+// #2
 let anchorAnimater = document.querySelectorAll("nav a");
 
-anchorAnimater.forEach((key, index) => {
-    anchorAnimater[index].addEventListener('mouseenter', (event) => {
-        anchorAnimater[index].style.transitionProperty = 'color';
-        anchorAnimater[index].style.transition = 'ease-in';
-        anchorAnimater[index].style.color = 'orange';
+anchorAnimater.forEach((element) => {
+    element.addEventListener('mouseenter', (event) => {
+        element.style.transitionProperty = 'color';
+        element.style.transition = 'ease-in';
+        element.style.color = 'darkorange';
 
     });
 
-    anchorAnimater[index].addEventListener('mouseleave', (event) => {
-        anchorAnimater[index].style.transitionProperty = 'color';
-        anchorAnimater[index].style.transition = '1s ease-out';
-        anchorAnimater[index].style.color = 'black';
+    element.addEventListener('mouseleave', (event) => {
+        element.style.transitionProperty = 'color';
+        element.style.transition = '1s ease-out';
+        element.style.color = 'black';
 
     });
 });
+
+// #3
+let headingAnimater = document.querySelector(".logo-heading");
+
+function colorGen () {
+    let min = 0;
+    let max = 255;
+
+    let colorR = Math.floor(Math.random() * (max - min + 1)) + min;
+    let colorG = Math.floor(Math.random() * (max - min + 1)) + min;
+    let colorB = Math.floor(Math.random() * (max - min + 1)) + min;
+
+    return `rgb(${colorR}, ${colorG}, ${colorB})`;  
+}
+
+headingAnimater.addEventListener('click', (event) => {
+    headingAnimater.style.transitionProperty = 'color';
+    headingAnimater.style.transition = 'ease-in';
+    headingAnimater.style.color = colorGen();
+})
+
+headingAnimater.addEventListener('click', (event) => {
+    headingAnimater.style.transitionProperty = 'color';
+    headingAnimater.style.transition = '2s ease-out';
+    headingAnimater.style.color = colorGen();
+})
+
+
+
+
+
+
+
+// #4
+
+// #5
+
+// #6
+
+// #7
+
+// #8
+
+// #9
+
+// #10
 
