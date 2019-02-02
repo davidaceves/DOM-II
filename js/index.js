@@ -19,14 +19,14 @@ photoBorder.forEach((element) => {
 let anchorAnimater = document.querySelectorAll("nav a");
 
 anchorAnimater.forEach((element) => {
-    element.addEventListener('mouseenter', (event) => {
+    element.addEventListener('mouseover', (event) => {
         element.style.transitionProperty = 'color';
         element.style.transition = 'ease-in';
         element.style.color = 'darkorange';
 
     });
 
-    element.addEventListener('mouseleave', (event) => {
+    element.addEventListener('mouseout', (event) => {
         element.style.transitionProperty = 'color';
         element.style.transition = '1s ease-out';
         element.style.color = 'black';
@@ -67,28 +67,46 @@ headingAnimater.addEventListener('click', (event) => {
 })
 
 
-// #4 Added zoom in and zoom out feature for all images with cursor change. Single click to zoom out and double click to zoom in.
+// #4 Added zoom in feature for all images with cursor change. Double click to zoom in. 
 let photoSelect = document.querySelectorAll("img");
 
 photoSelect.forEach((element) => {
 
-    element.addEventListener('click', (event) => {
+    element.addEventListener('load', (event) => {
         element.style.transitionProperty = 'width';
-        element.style.transition = '.5s ease-out';
         element.style.width = '50%';
         element.style.cursor = 'zoom-in';
     });
 
     element.addEventListener('dblclick', (event) => {
         element.style.width = '100%';
-        element.style.transitionProperty = 'width';
-        element.style.transition = '.5s ease-in';
-        element.style.cursor = 'zoom-out';
+        element.style.transitionProperty = 'width';        element.style.transition = '.5s ease-in';
+        element.style.cursor = 'pointer';
     });
 });
 
 
-// #5
+// #5 Added scroll wheel color change effect to intro <header>, it will also change the color of <p> text.
+
+let introAnimater = document.querySelector(".intro");
+let introP = document.querySelector(".intro p");
+
+// Prevents you from triggering the scroll wheel event from changing the color of the text
+introP.addEventListener('wheel', (event) => {
+    event.stopPropagation();
+})
+
+introAnimater.addEventListener('wheel', (event) => {
+    introAnimater.style.transitionProperty = 'color';
+    introAnimater.style.transition = 'ease-in';
+    introAnimater.style.color = colorGen();
+})
+
+introAnimater.addEventListener('wheel', (event) => {
+    introAnimater.style.transitionProperty = 'color';
+    introAnimater.style.transition = '1s ease-out';
+    introAnimater.style.color = colorGen();
+})
 
 // #6
 
