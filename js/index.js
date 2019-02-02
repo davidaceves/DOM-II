@@ -1,21 +1,21 @@
 // David Aceves
 // Your code goes here
 
-// #1
+// #1 Adds a black border to images when you enter or leave them with mouse pointer
 let photoBorder = document.querySelectorAll("img");
 
-photoBorder.forEach((key, index) => {
+photoBorder.forEach((element) => {
 
-    photoBorder[index].addEventListener('mouseenter', (event) => {
-        photoBorder[index].style.border = '1px solid black';
+    element.addEventListener('mouseenter', (event) => {
+        element.style.border = '1px solid black';
     });
 
-    photoBorder[index].addEventListener('mouseleave', (event) => {
-        photoBorder[index].style.border = 'none';
+    element.addEventListener('mouseleave', (event) => {
+        element.style.border = 'none';
     });
 });
 
-// #2
+// #2 Adds color change to anchor text when you enter or leave them with mouse pointer
 let anchorAnimater = document.querySelectorAll("nav a");
 
 anchorAnimater.forEach((element) => {
@@ -34,7 +34,7 @@ anchorAnimater.forEach((element) => {
     });
 });
 
-// #3
+// #3 Adds *random* color chance to "Fun Bus" text when you click the text
 let headingAnimater = document.querySelector(".logo-heading");
 
 function colorGen () {
@@ -61,12 +61,22 @@ headingAnimater.addEventListener('click', (event) => {
 })
 
 
+// #4 Added zoom in and zoom out feature for all images with cursor change. Single click to zoom out and double click to zoom in.
+let photoSelect = document.querySelectorAll("img");
 
+photoSelect.forEach((element) => {
 
+    element.addEventListener('click', (event) => {
+        element.style.width = '50%';
+        element.style.cursor = 'zoom-in';
+    });
 
+    element.addEventListener('dblclick', (event) => {
+        element.style.width = '100%';
+        element.style.cursor = 'zoom-out';
+    });
+});
 
-
-// #4
 
 // #5
 
