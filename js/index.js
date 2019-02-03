@@ -119,7 +119,7 @@ ptags.forEach((element) => {
 
 });
 
-// #7 Changes background color when you drag an image
+// #7 Changes background color when you drag an image and resets it when you end the drag
 let allPhotos = document.querySelectorAll("img");
 
 allPhotos.forEach((element) => {
@@ -127,12 +127,29 @@ allPhotos.forEach((element) => {
     element.addEventListener('drag', (event) => {
         document.querySelector('body').style.background = 'red';
     });
+
+    element.addEventListener('dragend', (event) => {
+        document.querySelector('body').style.background = '';
+    });
     
 })
 
-// #8
+// #8 Alerts user when you resize window
+window.addEventListener('resize', (event) => {
+    alert('Window has been resized.');
+});
 
-// #9
+
+// #9 Sets fun bus image to 50% scale and then on load animates it back to full size. Is very buggy, only works some of the time when reloading page.
+let funBus = document.querySelector('.intro img');
+
+funBus.style.transform = 'scale(.5)';
+
+funBus.addEventListener('load', (event) => {
+    funBus.style.transition = 'transform 1s';
+    funBus.style.transform = 'scale(1)';
+    
+});
 
 // #10
 
