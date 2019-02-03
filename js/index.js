@@ -151,5 +151,14 @@ funBus.addEventListener('load', (event) => {
     
 });
 
-// #10
+// #10 Added input fields to text focus color change
+let formFocus = document.getElementById('form');
+
+formFocus.addEventListener('focus', (event) => {
+    event.target.style.background = 'lightgray';
+}, true);
+
+formFocus.addEventListener('blur', function( event ) {
+  event.target.style.background = '';    
+}, true);
 

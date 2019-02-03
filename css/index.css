@@ -223,6 +223,10 @@ img {
   border-top: 2px dashed #C0C0C0;
   background: #FFEBCD;
 }
+.footer form {
+  text-align: center;
+  padding-top: 10px;
+}
 .footer p {
   text-align: center;
   color: #212529;
